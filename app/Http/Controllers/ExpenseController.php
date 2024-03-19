@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Expense;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExpenseController extends Controller
 {
@@ -12,7 +14,17 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        $expenses = Expense::paginate(50);
+
+        $categories = Category::get();
+
+        $data = [
+            'categories'=>$categories,
+            'expenses'=>$expenses,
+            'title'=>'Create expenditure record'
+        ];
+
+        return view('expenses.expenditures')->with($data);
     }
 
     /**
@@ -28,7 +40,34 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $rules = [
+            'category_id'=>'required',
+            'unit_amount'=>'required|numeric',
+            'quantity'=>'required|numeric',
+            'date_spend'=>'required',
+        ];
+
+        $this->validate($request,$rules);
+
+        $saveExpense = new Expense();
+
+        $saveExpense->category_id = $request->category_id;
+
+        $saveExpense->user_id = Auth::id();
+
+        $saveExpense->particular = $request->particular;
+
+        $saveExpense->unit_amount = $request->unit_amount;
+
+        $saveExpense->quantity = $request->quantity;
+
+        $saveExpense->date_spend = $request->date_spend;
+
+        $saveExpense->save();
+
+        return back();
+
     }
 
     /**
@@ -44,7 +83,16 @@ class ExpenseController extends Controller
      */
     public function edit(Expense $expense)
     {
-        //
+
+        $categories = Category::get();
+
+        $data = [
+            'expense'=>$expense,
+            'categories'=>$categories,
+            'title'=>'Edit expenditure'
+        ];
+
+        return view('expenses.edit_expenditures')->with($data);
     }
 
     /**
@@ -52,7 +100,22 @@ class ExpenseController extends Controller
      */
     public function update(Request $request, Expense $expense)
     {
-        //
+
+        $expense->category_id = $request->category_id;
+
+        $expense->user_id = Auth::id();
+
+        $expense->particular = $request->particular;
+
+        $expense->unit_amount = $request->unit_amount;
+
+        $expense->quantity = $request->quantity;
+
+        $expense->date_spend = $request->date_spend;
+
+        $expense->save();
+
+        return redirect()->route('expenses.index');
     }
 
     /**

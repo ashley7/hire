@@ -12,7 +12,16 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+
+        $categories = Category::get();
+
+        $data = [
+            'categories'=>$categories,
+            'title'=>'Categories'
+        ];
+
+        return view('expenses.categories')->with($data);
+
     }
 
     /**
@@ -28,7 +37,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'name'=>'required',
+        ];
+
+        $this->validate($request,$rules);
+
+        $saveCategory = new Category();
+
+        $saveCategory->name = $request->name;
+
+        $saveCategory->description = $request->description;
+
+        $saveCategory->save();
+
+        return back();
     }
 
     /**
@@ -44,7 +67,12 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $data = [
+            'category'=>$category,
+            'title'=>'Edite category'
+        ];
+
+        return view('expenses.edit_category')->with($data);
     }
 
     /**
@@ -52,7 +80,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+
+        $category->name = $request->name;
+
+        $category->description = $request->description;
+
+        $category->save();
+
+        return redirect()->route('categories.index');
     }
 
     /**

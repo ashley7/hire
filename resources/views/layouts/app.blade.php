@@ -142,6 +142,20 @@
                                 </a>                                 
                             </li>
 
+                            <li>
+                                <a href="{{route('categories.index')}}"  class="text-dark">
+                                    <i class="fa fa-book text-success"></i>
+                                    <span> EXP CATEGORY </span>
+                                </a>                                 
+                            </li>
+
+                            <li>
+                                <a href="{{route('expenses.index')}}"  class="text-dark">
+                                    <i class="fa fa-book text-success"></i>
+                                    <span> EXPENSES </span>
+                                </a>                                 
+                            </li>                            
+
                         </ul>                 
                     </div>
                     <div class="clearfix"></div>
