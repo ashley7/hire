@@ -9,6 +9,7 @@
     <title></title>
     <link rel="stylesheet" href="/market/vendor/css/bootstrap.min.css">
     <link rel="stylesheet" href="/market/css/style.css">
+    <link rel="shortcut icon" href="/assets/images/logo.png">
 
     <style>
         #hero-bg-image:before, #hero-particles-effect:before {
@@ -38,7 +39,7 @@
             <div id="nav-menu-wrap">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg p-0">
-                        <a class="navbar-brand" title="Home" href="index.html">
+                        <a class="navbar-brand" title="Home" href="/">
                             <img style="background-color: #FFF; border-radius: 5%; padding: 1%;" src="{{asset('assets/images/logo.png')}}" alt="Logo White" width="25%" class="img-fluid logo-transparent">
                             <img src="{{asset('assets/images/logo.png')}}" alt="Logo White" width="25%" class="img-fluid logo-normal">
                         </a>
@@ -167,11 +168,7 @@
                                             <p>Continuously seeking new ways to improve services, enhance rental offerings, and adapt to industry advancements.</p>
                                         </div>
                                     </li>
-
-
-
-                                </ul>
-                                
+                                </ul>                                
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.2s">
@@ -186,8 +183,7 @@
                     </div>
                 </div>
             </section>
-            <!--// About Section End //-->
- 
+
        
             <section class="section bg-light-grey pb-minus-76" data-scroll-index="4">
                 <div class="container">
