@@ -1,0 +1,56 @@
+/* ---------------------------------------------------------------- */
+/* 15.Products                          
+/* ---------------------------------------------------------------- */
+.product-item {
+    text-align: center;
+    margin-bottom: 24px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 10px 15px rgba($color_footer, 0.1);
+    .btn-block {
+        .primary-btn {
+            display: block;
+            width: 100%;
+            border: none;
+            background: darken($color_footer, 5%);
+            box-shadow: 0 10px 15px rgba($color_footer, 0.1);
+        }
+    }
+    .top {
+        padding: 30px;
+        background: $color_footer;
+        h5 {
+            font-size: 20px;
+            color: $color_white;
+        }
+    }
+    .text {
+        padding: 30px;
+        background: $color_footer;
+        .rating {
+            line-height: 0;
+            margin-top: 10px;
+            i {
+                &:last-child {
+                    margin-right: 0;
+                }
+                font-size: 12px;
+                margin-right: 3px;
+                color: $color_orange;
+            }
+        }
+        h3 {
+            color: $color_white;
+        }
+    }
+    &:hover {
+        .btn-block {
+            a {
+                &:hover {
+                    box-shadow: none;
+                    color: $color_white !important;
+                    background: $color_primary
+                }
+            }
+        }
+    }
+}

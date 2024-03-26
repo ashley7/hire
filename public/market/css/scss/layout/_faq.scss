@@ -1,0 +1,51 @@
+/* ---------------------------------------------------------------- */
+/* 18.FAQ Question           
+/* ---------------------------------------------------------------- */
+#faq-question {
+    background: $color_footer;
+}
+.accordion-item {
+    background: transparent;
+    transition: all 0.25s ease-in-out;
+    &:last-child {
+        .accordion-body {
+            border:none;
+            padding-bottom: 0;
+        }
+    }
+    .accordion-item-header {
+        a {
+            color: $color_white;
+            padding: 30px 60px 30px 30px;
+            display: block;
+            position: relative;
+            font-family: $font_heading;
+            font-weight: 700;
+            border-bottom: 1px solid rgba($color_white, 0.1);
+            &:after {
+                content: "\f063";
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                color: $color_white;
+                font: {
+                    family: "Font Awesome 5 Free";
+                    size: 1rem;
+                    weight: 700;
+                }
+            }
+            &[aria-expanded="true"]:after {
+                content: "\f062";
+            }
+        }
+    }
+    .accordion-body {
+        padding:30px;
+        border: none;
+        border-bottom: 1px solid rgba($color_white, 0.1);
+        p {
+            opacity: 0.75;
+            color: $color_white;
+        }
+    }
+}

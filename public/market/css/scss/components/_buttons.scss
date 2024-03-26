@@ -1,0 +1,105 @@
+/* ---------------------------------------------------------------- */
+/* 04.Buttons                                                     
+/* ---------------------------------------------------------------- */
+.white-btn {
+    font-weight: 500;
+    padding: 17px 35px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 14px;
+    display: inline-block;
+    background: $color_white;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    color: $color_black !important;
+    border: 1px solid $color_white;
+    box-shadow: 0 10px 20px 0 rgba($color_black,0.15);
+    &:hover {
+        background: transparent;
+        color: $color_white !important;
+        box-shadow: none;
+    }
+}
+.primary-btn {
+    z-index: 1;
+    font-weight: 500;
+    padding: 18px 35px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 14px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    background: $color_primary;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    color: $color_white !important;
+    border: 1px solid $color_primary;
+    box-shadow: 0 10px 20px 0 rgba($color_primary,0.15);
+    &:hover {
+        background: transparent;
+        color: $color_primary !important;
+        box-shadow: none;
+    }
+}
+.secondary-btn {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 18px 35px;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    background: $color_secondary;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    color: $color_white !important;
+    box-shadow: 0 10px 20px 0 rgba($color_secondary,0.15);
+    &:hover {
+        color: $color_white !important;
+        box-shadow: none;
+        background: darken($color_secondary,5%);
+    }
+}
+.outline-btn {
+    font-weight: 500;
+    padding: 17px 35px;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    background:  transparent;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    border: 1px solid $color_white;
+    color: $color_white !important;
+    &:hover {
+        background: $color_white;
+        color: $color_black !important;
+    }
+}
+.scroll-top-btn {
+	bottom: 0;
+	opacity: 0;
+	right: 10px;
+	width: 57px;
+    height: 57px;
+    z-index: 144;
+	line-height: 57px;
+	font-size: 16px;
+	text-align: center;
+	position: fixed;
+	visibility: hidden;
+	color: $color_white !important;
+	background: $color_primary;
+	transition: all 0.5s ease;
+    box-shadow: 0 10px 20px 0 rgba($color_primary,0.15);
+    &:hover {
+        background: $color_secondary;
+        color: $color_white !important;
+        box-shadow: none;
+    }
+	&.active {
+		opacity: 1;
+		bottom: 10px;
+		visibility: visible;
+	}
+}

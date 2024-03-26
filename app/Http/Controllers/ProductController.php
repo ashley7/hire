@@ -6,6 +6,7 @@ use App\Models\HireHelper;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -14,6 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+
+        if(Auth::user()->user_type == "customer") return redirect('/');
+        
         $products = Product::get();
 
         $data = [

@@ -1,0 +1,102 @@
+/* ---------------------------------------------------------------- */
+/* 11.About                                           
+/* ---------------------------------------------------------------- */
+#about {
+    padding-bottom: 93px;
+}
+.about-inner {
+    > span {
+        padding: 10px 14px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $color_secondary;
+        margin-bottom: 15px;
+        display: inline-block;
+        background: rgba($color_secondary, 0.1);
+    }
+    h2 {
+        margin-bottom: 15px;
+    }
+    p {
+        margin-bottom: 22px;
+    }
+    ul {
+        margin-bottom: 30px;
+        li {
+            display: flex;
+            align-items: start;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+                
+            }
+            .icon {
+                margin-right: 20px;
+                border-radius: 50%;
+                display: inline-block;
+                span {
+                    &::before {
+                        width: 50px;
+                        height: 50px;
+                        margin-left: 0;
+                        font-size: 20px;
+                        line-height: 50px;
+                        border-radius: 50%;
+                        text-align: center;
+                        color:  $color_secondary;
+                        display: inline-block;
+                        background: rgba($color_secondary,0.1);
+                        transition: all 0.5s ease-in-out;
+                    }
+                }
+            }
+            &:hover {
+                .icon {
+                    span {
+                        &::before {
+                            color: $color_white;
+                            background: $color_secondary;
+                        }
+                    }
+                }
+            }
+            .text {
+                h5 {
+                    margin-bottom: 10px;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (992px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:992px) {
+    .about-img {
+        margin-top: 30px;
+        margin-left: 0;
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (576px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:576px) {
+    .about-inner {
+        h2 {
+            font-size: 1.467rem;
+            line-height: 1.4;
+        }
+        ul {
+            li {
+                display: block;
+                .icon {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

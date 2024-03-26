@@ -40,24 +40,8 @@ class HireDetailController extends Controller
 
         $product = Product::find($request->product_id);
 
-        $saveDetail = new HireDetail();
-
-        $saveDetail->hire_id = $request->hire_id;
-
-        $saveDetail->product_id = $request->product_id;
-
-        $saveDetail->from = $request->from;
-
-        $saveDetail->to = $request->to;
-
-        $saveDetail->quantity = $request->quantity;
-
-        $saveDetail->discount = $request->discount;
-
-        $saveDetail->unit_price = $product->price;
-
-        $saveDetail->save();
-
+        $saveDetail = HireDetail::saveDetails($request->hire_id,$request->product_id,$request->from,$request->to,$request->quantity,$request->discount, $product->price);
+        
         return redirect()->route('hires.show',$saveDetail->hire_id);
     }
 

@@ -1,0 +1,74 @@
+/* ---------------------------------------------------------------- */
+/* 20.Newsletter                          
+/* ---------------------------------------------------------------- */
+#subscribeNewsletter {
+    background-color: $color_footer;
+    .section-heading {
+        margin-bottom: 0;
+        text-align: left;
+        h2 {
+            text-align: left;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            &:after {
+                display: none;
+            }
+            &:before {
+                content: "";
+                width: 20px;
+                height: 1px;
+                vertical-align: middle;
+                background: $color_white;
+                margin-right: 10px;
+                margin-left: 10px;
+                display: inline-block;
+                position: relative;
+            }
+        }
+    }
+    .newsletter-wrap {
+        .newsletter-form-group {
+            position: relative;
+            display: flex;
+            input {
+                width: 100%;
+                display: block;
+                border: none;
+                height: 60px;
+                padding: 0 18px 0 18px;
+                color: $color_white;
+                background: rgba($color_white, 0.02);
+                transition: all 0.25s ease;
+            }
+            button {
+               border: none;
+               outline: none;
+               height: 60px;
+               font-weight: 500;
+               letter-spacing: 1px;
+               padding: 0 18px 0 18px;
+               text-transform: uppercase;
+               color: $color_white;
+               background: $color_primary;
+               transition: all 0.5s ease;
+               &:hover {
+                background: darken($color_primary, 5%);
+               }
+            }
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (576px)
+/* ---------------------------------------------------------------- */
+@media screen and (max-width:992px) {
+    #subscribeNewsletter {
+        .newsletter-wrap {
+            margin-top: 30px;
+        }
+    }
+}

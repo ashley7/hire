@@ -55,4 +55,45 @@ class HireDetail extends Model
         return true;
 
     }
+
+
+    public static function unreturned(){
+
+        $hire_details = HireDetail::get();
+
+        $data = [];
+
+        foreach ($hire_details as $detail) {
+
+            if(!$detail->returned($detail->id)) $data[] = $detail->id;
+             
+        }
+
+        return HireDetail::whereIn('id',$data)->get();
+
+    }
+
+    public static function saveDetails($hire_id,$product_id,$from,$to,$quantity,$discount,$price) {
+
+        $saveDetail = new HireDetail();
+
+        $saveDetail->hire_id = $hire_id;
+
+        $saveDetail->product_id = $product_id;
+
+        $saveDetail->from = $from;
+
+        $saveDetail->to = $to;
+
+        $saveDetail->quantity = $quantity;
+
+        $saveDetail->discount = $discount;
+
+        $saveDetail->unit_price = $price;
+
+        $saveDetail->save();
+
+        return $saveDetail;
+        
+    }
 }

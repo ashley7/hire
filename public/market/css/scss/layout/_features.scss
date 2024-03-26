@@ -1,0 +1,94 @@
+/* ---------------------------------------------------------------- */
+/* 12.Features                                            
+/* ---------------------------------------------------------------- */
+.features-wrap {
+    display: flex;
+    .features-inner {
+        flex: 0 0 50%;
+        background: $color_footer;
+    }
+    .features-img {
+        flex: 0 0 50%;
+    }
+}
+.features-item {
+    z-index: 1;
+    display: flex;
+    position: relative;
+    &:nth-child(even) {
+        .icon {
+            background: rgba($color_white, 0.03);
+        }    
+    }
+    &:nth-child(odd) {
+        background: rgba($color_white, 0.05);  
+    }
+    .icon {
+        width: 120px;
+        flex: 0 0 140px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        color: $color_white;
+        align-items: center;
+        background: rgba($color_white, 0.05);
+        span {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:before {
+                margin-left: 0;
+                font-size: 50px;
+            }
+        }
+    }
+    .body {
+        padding: 30px;
+        h5, p {
+            color: $color_white;
+        }
+        p {
+            opacity: 0.75;
+        }
+        h5 {
+            margin-bottom: 10px;
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (992px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:992px) {
+    .features-wrap {
+        display: block;
+        .features-inner {
+            flex: 0 0 1;
+        }
+        .features-img {
+            flex: 0 0 1;
+        }
+    }
+    #features {
+        .container {
+            padding: 0;
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (576px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:576px) {
+    .features-item {
+        display: block;
+        .icon {
+            width: 100%;
+            padding: 30px;
+            margin-right: 0;
+            text-align: left;
+            span {
+                justify-content: start;
+            }
+        }
+    }
+}

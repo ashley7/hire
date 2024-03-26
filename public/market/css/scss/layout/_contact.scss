@@ -1,0 +1,298 @@
+/* ---------------------------------------------------------------- */
+/* 19.Contact              
+/* ---------------------------------------------------------------- */
+.contact-info-wrap {
+    background: $color_primary;
+    box-shadow: 0 10px 15px rgba($color_primary, 0.1);
+    .text {
+        padding: 30px 34px;
+        h2 {
+            display: block;
+            font-size: 20px;
+            position: relative;
+            color: $color_white;
+        }
+        h4 {
+            font-family: $font_text;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            color: $color_white;
+        }
+    }
+}
+.contact-info-inner {
+    .contact-info-item {
+        z-index: 1;
+        display: flex;
+        position: relative;
+        &:nth-child(even) {
+            .icon {
+                background: rgba($color_white, 0.03);
+            }    
+        }
+        &:nth-child(odd) {
+            background: rgba($color_white, 0.05);  
+        }
+        .icon {
+            width: 120px;
+            flex: 0 0 120px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            color: $color_white;
+            align-items: center;
+            background: rgba($color_white, 0.05);
+            span {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:before {
+                    margin-left: 0;
+                    font-size: 50px;
+                }
+            }
+        }
+        .body {
+            padding: 30px;
+            h5, p {
+                color: $color_white;
+            }
+            p {
+                opacity: 0.75;
+            }
+            h5 {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+.contact-form-wrap {
+    padding: 20px;
+    border-radius: 0;
+    background: $color_white;
+    box-shadow: 0 10px 15px rgba($color_primary, 0.1);
+    .contact-btn-left {
+        margin-top: 6px;
+    }
+	.contact-form-group {
+		position: relative;
+		margin-bottom: 20px;
+		.form-control {
+			height: 60px;
+			color: $color_black;
+            outline: none;
+            border: none;
+			padding: 0 60px 0 18px;
+            border-radius: 0;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 15px 0 rgba($color_primary, 0.1);
+			&:focus {
+				outline: none;
+				color: $color_black;
+			}
+		}
+		#txtInput {
+			padding-left: 90px;
+		}
+		#txtCaptchaSpan {
+			position: absolute;
+			top: 50%;
+			height: 60px;
+			padding-left: 14px;
+			padding-right: 14px;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+			background: $color_primary;
+			color: $color_white;
+			border-radius: 0;
+		}
+		textarea.form-control {
+			height: auto;
+			padding-top: 20px;
+		}
+	}	
+	.empty-form span, .email-invalid span, .phone-invalid span, .terms-alert span, .subject-alert span, .security-alert span {
+        display: block;
+        font-size: 16px;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 0;
+        font-weight: 500;
+        text-align: left;
+        border-left: 2px solid $color_danger;
+        color: darken($color_danger,10%);
+        background: rgba($color_danger, 0.1);
+    }
+    .form-validate-icons {
+        top: 0;
+        right: 14px;
+        height: 60px;
+        position: absolute;
+        line-height: 60px;
+        span {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            &:before {
+                width: 32px;
+                height: 32px;
+                text-align: center;
+                line-height: 32px;
+                border-radius: 0;
+                color: $color_white;
+                display: inline-block;
+                font: {
+                    size: 14px;
+                    family: "Font Awesome 5 Free";
+                    weight: 700;
+                }
+            }
+            &.error {
+                opacity: 1;
+                visibility: visible;
+                &:before {
+                    content: "\f00d";
+                    color: $color_white;
+                    background: $color_danger;
+                }
+            }
+            &.success {
+                opacity: 1;
+                visibility: visible;
+                &:before {
+                    content: "\f00c";
+                    color: $color_white;
+                    background: $color_secondary;
+                }
+            }
+        }
+    }
+    .custom-select-wrapper {
+        position: relative;
+        select, .select-hide {
+            display: none;
+        }
+        .select-selected {
+            border-radius: 0;
+            outline: none;
+            padding: 18px;
+            border: none;
+            height: 60px;
+            cursor: pointer;
+            color: $color_black !important;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 15px rgba($color_primary, 0.1);
+            &:focus {
+                outline: none;
+                border: none;
+                box-shadow: 0px 23px 49px 0px $color_shadow;
+            }
+            &:after {
+                right: 14px;
+                top: 14px;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                border-radius: 0;
+                content: "\f078";
+                position: absolute;
+                pointer-events: none;
+                display: inline-block;
+                color: $color_white;
+                background: $color_primary;
+                font: {
+                    size: 14px;
+                    family: "Font Awesome 5 Free";
+                    weight: 700;
+                }
+            }
+            &.select-arrow-active:after {
+                content: "\f077";
+            }
+        }
+        .select-items {
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            margin-top: 10px;
+            position: absolute;
+            border-radius: 0;
+            color: $color_black !important;
+            background-color: $color_white;   
+            box-shadow: 0 10px 15px rgba($color_black, 0.1);
+            animation: fadeInDown 0.5s ease forwards;
+            .same-as-selected {
+                background-color: $color_primary;
+                border-bottom-color: $color_primary;
+                color: $color_white !important;
+            }
+            div {
+                color: $color_black;
+                outline: none;
+                width: 100%;
+                display: block;
+                padding: 12px 18px;
+                font-size: 15px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.25s ease;
+                position: relative;
+                border-bottom: 1px solid rgba($color_primary, 0.08);
+                &:focus {
+                    outline: none;
+                    border: none;
+                    box-shadow: 0 23px 49px 0 $color_shadow;
+                }
+                &:last-child {
+                    border-bottom: 0;
+                }
+                &:hover{
+                    background-color: $color_primary;
+                    border-bottom-color: $color_primary;
+                    color: $color_white;
+                }
+            }
+        }
+    }
+}
+.google-map {
+    width: 100%;
+    line-height: 0;
+    iframe {
+        width: 100%;
+        min-height: 500px;
+        background: $color_white;
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (992px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:992px) {
+    .contact-info-wrap {
+        margin-bottom: 30px;
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (576px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:576px) {
+    .contact-info-inner {
+        .contact-info-item {
+            display: block;
+            .icon {
+                width: 100%;
+                padding: 30px;
+                margin-right: 0;
+                text-align: left;
+                span {
+                    justify-content: start;
+                }
+            }
+        }
+    }
+}

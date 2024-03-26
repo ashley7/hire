@@ -1,0 +1,81 @@
+/* ---------------------------------------------------------------- */
+/* 19.Testimonial                                  
+/* ---------------------------------------------------------------- */
+#testimonial {
+    position: relative;
+    background: $color_footer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .testimonial-img {
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        width: calc(50% - 12px);
+        overflow: hidden;
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .testimonial-inner {
+        padding-left: 30px;
+        h2 {
+            color: $color_white;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonial-card {
+        .testimonial-text {
+            .rating {
+                color: $color_orange;
+                margin-bottom: 30px;
+            }
+            p {
+                opacity: 0.75;
+                font-size: 20px;
+                font-style: italic;
+                color: $color_white;
+            }
+        }
+        .testimonial-body {
+            margin-top: 30px;
+            img {
+                margin-bottom: 10px;
+            }
+            h5 {
+                color: $color_white;
+                margin-bottom: 5px;
+            }
+            span {
+                opacity: 0.75;
+                color: $color_white;
+            }
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (992px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:992px) {
+    #testimonial {
+        .testimonial-img {
+            display: none;
+        }
+        .testimonial-inner  {
+            padding-left: 0;
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (576px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:576px) {
+    .testimonial-inner  {
+        h2 {
+            font-size: 1.467rem;
+            line-height: 1.4;
+        } 
+    }
+}

@@ -1,0 +1,287 @@
+/* ---------------------------------------------------------------- */
+/* 23.Rtl Mode                         
+/* ---------------------------------------------------------------- */
+body.rtl-mode {
+    direction: rtl;
+    text-align: right;
+    .scroll-top-btn {
+        right: initial;
+        left: 10px;
+    }
+    .section .section-heading-left {
+        text-align: right;
+        h2 {
+            text-align: right;
+        }
+    }
+    .header {
+        .navbar-toggler {
+            padding: 0 0 0 10px;
+        }
+        .navbar-btn-resp {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+        .nav-item {
+            .nav-link {
+                &:after {
+                    left: initial;
+                    right: 0;
+                }
+                &:not(.active) {
+                    &:after {
+                        left: initial;
+                        right: 0;
+                        transform-origin: 0 0;
+                    }
+                    &:hover {
+                        &:after {
+                            transform: scaleX(1);
+                            transform-origin: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .hero-banner {
+        .hero-inner {
+            h2 {
+                padding-right: 0;
+                padding-left: 60px;
+            }
+        }
+        .hero-img {
+            text-align: left;
+            img {
+                text-align: left;
+            }
+        }
+    }
+    .signup-form-wrap {
+        .signup-form-inner {
+            .custom-control {
+                .custom-control-label {
+                    margin-left: 0;
+                    padding-left: 0;
+                    padding-right: 8px;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+    .about-inner {
+        ul {
+            li {
+                .icon {
+                    margin-right: 0;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+    .how-it-works-item {
+        .item-number {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+        .text {
+            a {
+                i {
+                    margin-left: 0;
+                    margin-right: 5px;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    .product-item {
+        .btn-block {
+            a {
+                i {
+                    margin-left: 0!important;
+                    margin-right: 1rem!important;
+                } 
+            }
+        }
+    }
+    .why-choose-us-inner  {
+        padding-left: 0;
+        padding-right: 30px;
+    }
+    .why-choose-us-item {
+        .icon {
+            span {
+                margin-right: 0;
+                margin-left: 15px;
+            }
+        }
+    }
+    #testimonial {
+        .testimonial-img {
+            left: initial;
+            right: 0;
+        }
+        .testimonial-inner {
+            padding-left: 0;
+            padding-right: 30px;
+        }
+        #testimonialCarousel {
+            &.owl-carousel {
+                .owl-nav {
+                     text-align: right !important;
+                }
+                button.owl-next {
+                    span {
+                        transform: rotate(180deg);
+                    }
+                }
+                button.owl-prev {
+                    span {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+         }
+    }
+    .accordion-item {
+        .accordion-item-header {
+            a {
+                padding: 30px 30px 30px 60px;
+                &:after {
+                    left: 30px;
+                    right: initial;
+                }
+            }
+        }
+    }
+    #subscribeNewsletter {
+        .section-heading {
+            text-align: right;
+            h2 {
+                text-align: right;
+            }
+        }
+    }
+    .contact-form-wrap {
+        .contact-form-group {
+            .form-control {
+                color: $color_black;
+                outline: none;
+                padding: 0 18px 0 60px;
+            }
+            #txtInput {
+                padding-left: 60px;
+                padding-right: 90px;
+            }
+            textarea.form-control {
+                padding-top: 20px;
+            }
+        }	
+        .empty-form span, .email-invalid span, .phone-invalid span, .terms-alert span, .subject-alert span, .security-alert span {
+            text-align: right;
+            border-left: 0;
+            border-right: 2px solid $color_danger;
+        }
+        .form-validate-icons {
+            right: initial;
+            left: 14px;
+        }
+        .custom-select-wrapper {
+            .select-selected {
+                &:after {
+                    right: initial;
+                    left: 14px;
+                }
+            }
+        }
+    }
+    .footer {
+        .footer-top {
+            .footer-social-links {
+                a {
+                    margin-right: 0;
+                    margin-left: 10px;
+                    &:last-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+            .footer-links {
+                li {
+                    &:before {
+                        margin-right: 0;
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+        .copyright {
+            .footer-payment {
+                ul {
+                    li {
+                        margin-right: 0;
+                        margin-left: 5px;
+                        &:last-child {
+                            margin-right: 0;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (992px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:991.98px) {
+    body.rtl-mode {
+        .header {
+            .navbar-brand {
+                padding: 10px 15px 10px 0;
+            }
+        }
+        .hero-banner {
+            .hero-inner {
+                h2 {
+                    padding-left: 0;
+                }
+            }
+        }
+        .why-choose-us-inner  {
+            padding: 0;
+        }
+        #testimonial {
+            .testimonial-inner {
+                padding: 0;
+            }
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (575px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:575.98px) {
+    body.rtl-mode {
+        .about-inner {
+            ul {
+                li {
+                    .icon {
+                        margin: 0 0 20px 0;
+                    }
+                }
+            }
+        }
+        #subscribeNewsletter {
+            .newsletter-wrap {
+                .newsletter-form-group {
+                    button {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

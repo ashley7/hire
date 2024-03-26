@@ -16,6 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
+
+        if(Auth::user()->user_type == "customer") return redirect('/');
+        
         $users = User::where('user_type','customer')->get();
 
         $data = [

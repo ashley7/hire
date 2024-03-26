@@ -52,6 +52,8 @@ class HireController extends Controller
 
         $saveHire->date_placed = $request->date_placed;
 
+        $saveHire->status = "confirmed";
+
         $saveHire->save();
 
         return redirect()->route('hires.show',$saveHire->id);

@@ -1,19 +1,23 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\HireController;
 use App\Http\Controllers\HireDetailController;
 use App\Http\Controllers\HirePaymentController;
 use App\Http\Controllers\HireReturnController;
+use App\Http\Controllers\MarketController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+
+Route::get('/',[MarketController::class,'landing']);
+
+Route::post('get_user',[MarketController::class,'get_user']);
+
 
 Auth::routes();
 
@@ -38,5 +42,9 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::resource('categories',CategoryController::class);
 
     Route::resource('expenses',ExpenseController::class);
+
+    Route::get('load_cart/{product_id}',[MarketController::class,'load_cart']);
+
+    Route::resource('carts',CartController::class);
 
 });
