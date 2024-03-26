@@ -18,6 +18,22 @@ class HireReturnController extends Controller
 
         $hires = Hire::get();
 
+        $unreturnedRecords = [];
+
+        foreach ($hires as $hire) {
+
+            $details = $hire->details->pluck('id')->toArray();             
+
+            $hirereturns = HireReturn::whereIn('hire_detail_id',$details)->get()->count();
+
+            if(count($details) == $hirereturns) continue;
+
+            $unreturnedRecords[] = $hire->id;
+             
+        }
+
+        $hires = Hire::whereIn('id',$unreturnedRecords)->get();
+
         $data = [
             'returns'=>$returns,
             'title'=>'Product Returns',
@@ -78,8 +94,13 @@ class HireReturnController extends Controller
     public function show($hire_id)
     {
 
+        $details = HireDetail::where('hire_id',$hire_id)->pluck('id')->toArray();
+
+        $hire_returns = HireReturn::whereIn('hire_detail_id',$details)->pluck('hire_detail_id')->toArray();       
+
         return HireDetail::select('hire_details.id','products.name','hire_details.to as date')
                             ->where('hire_id',$hire_id)
+                            ->whereNotIn('hire_details.id',$hire_returns)
                             ->join('products','hire_details.product_id','products.id')
                             ->get();
     }

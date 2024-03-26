@@ -38,12 +38,9 @@
         <!-- f67c04 -->
  
             <div class="navbar-custom" style="background-color: #ffffff;">
-                <ul class="list-unstyled topnav-menu float-right mb-0"> 
-                     
+                <ul class="list-unstyled topnav-menu float-right mb-0">                    
                 
-
                     <li class="dropdown notification-list">
-
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span class="pro-user-name ml-1 text-dark">
                             @guest
@@ -55,12 +52,11 @@
 
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                          
-                            <a href="{{ route('password.request') }}" class="dropdown-item notify-item">
+                            <!-- <a href="{{ route('password.request') }}" class="dropdown-item notify-item">
                                 <i class="fa fa-key"></i>
                                 <span>Change password</span>
-                            </a>
- 
-                            <div class="dropdown-divider"></div>
+                            </a>-->
+                            <!-- <div class="dropdown-divider"></div> -->
 
                             <a class="dropdown-item notify-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -115,7 +111,7 @@
 
                             <li>
                                 <a href="{{route('hires.index')}}"  class="text-dark">
-                                    <i class="fa fa-book text-success"></i>
+                                    <i class="fa fa-cart-plus text-success"></i>
                                     <span> HIRES </span>
                                 </a>                                 
                             </li>
@@ -130,7 +126,7 @@
 
                             <li>
                                 <a href="{{route('users.index')}}"  class="text-dark">
-                                    <i class="fa fa-book text-success"></i>
+                                    <i class="fa fa-users text-success"></i>
                                     <span> CUSTOMERS </span>
                                 </a>                                 
                             </li>

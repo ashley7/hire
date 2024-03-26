@@ -28,7 +28,7 @@
                 <br>
 
                 <div class="text-center w-75 m-auto">
-                    <a href="">
+                    <a href="/">
                         <span><img src="/assets/images/logo.png" alt="" width="50%"></span>
                     </a>
                 </div>
@@ -65,7 +65,6 @@
                         @endif
 
 
-                            <center><p> <strong>{{ env("APP_NAME") }}</strong></p></center>   
                             <hr style="background-color: #CD9212; height:1px">                        
                             @yield("content")
                         </div>
@@ -76,9 +75,10 @@
                     </div>
             </div>
 
-            <div class="col-md-6 col-lg-6 col-sm-12" style="background-color: green;">
+            <div class="col-md-6 col-lg-6 col-sm-12" style="background-color: #fff;">
                 <div class="text-center">
-                    <img src="{{asset('assets/images/home_picture.jpg')}}" alt="Home" width="80%" style="margin-bottom: 10%;" >
+                    <br> <br> <br>
+                    <img src="{{asset('assets/images/one.jpg')}}" alt="Home" width="80%" style="margin-bottom: 10%;" >
                 </div>
             </div>
         </div>      

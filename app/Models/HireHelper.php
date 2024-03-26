@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use AfricasTalking\SDK\AfricasTalking;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -28,5 +29,23 @@ class HireHelper extends Model
         return $file_url;
         
 
+    }
+
+
+    public static function sendSMS($phone_number,$message){
+
+        $username = env("API_USERNAME");
+
+        $apiKey   = env('API_PASSWORD');
+
+        $AT       = new AfricasTalking($username, $apiKey);
+
+        $sms      = $AT->sms();
+
+        $sms->send([
+            'to'      => $phone_number,
+            'message' => $message
+        ]);
+        
     }
 }

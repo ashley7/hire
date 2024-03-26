@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Hire;
 use App\Models\HireDetail;
+use App\Models\HireHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -92,9 +93,13 @@ class CartController extends Controller
 
             HireDetail::saveDetails($saveHire->id,$cart->product_id,$cart->from,$cart->to,$cart->quantity,NULL, $cart->product->price);
 
-        }
+        }       
 
         Cart::where('user_id',$user_id)->delete();
+
+        $message = "Hello Admin, Hire order Number ".$saveHire->id." from ".$saveHire->user->name." has been place, please follow it up.";
+
+        HireHelper::sendSMS(env("ADMIN_PHONE"),$message);
 
         return back()->with(['status'=>'Your Order has been placed']);
     }

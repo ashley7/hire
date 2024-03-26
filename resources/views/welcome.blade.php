@@ -258,6 +258,10 @@
                                                     <p>+256 750 402460 | +256 779 140242 | +256 784 414368</p>                                                  
                                                 </div>
                                             </li>
+
+                                            <li>
+                                                <a href="/login" class="text-white">Admin Login</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>

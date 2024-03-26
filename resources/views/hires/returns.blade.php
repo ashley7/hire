@@ -102,7 +102,7 @@
 
           $.each(data,function(index,subObject){
 
-            $('#hire_detail_id').append("<option value="+subObject.id+">"+subObject.name+" Expected date: "+subObject.date+"</option>");
+            $('#hire_detail_id').append("<option value="+subObject.id+">"+subObject.id+". "+subObject.name+": Expected date: "+subObject.date+"</option>");
 
           });
 
