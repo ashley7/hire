@@ -53,7 +53,7 @@
                 <label for="description">Description</label>
                 <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
-                <label for="price">Price</label>
+                <label for="price">Daily Hire Price</label>
                 <input type="number" class="form-control" name="price">
 
                 <hr>
