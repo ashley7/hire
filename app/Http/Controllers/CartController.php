@@ -97,7 +97,7 @@ class CartController extends Controller
 
         Cart::where('user_id',$user_id)->delete();
 
-        $message = "Hello Admin, Hire order Number ".$saveHire->id." from ".$saveHire->user->name." has been place, please follow it up.";
+        $message = "Hello Admin, Hire order No.: ".$saveHire->id." for " .env('APP_NAME'). ", from ".$saveHire->user->name." has been place, please follow it up.";
 
         HireHelper::sendSMS(env("ADMIN_PHONE"),$message);
 
