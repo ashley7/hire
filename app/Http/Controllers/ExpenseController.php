@@ -21,7 +21,7 @@ class ExpenseController extends Controller
         $data = [
             'categories'=>$categories,
             'expenses'=>$expenses,
-            'title'=>'Create expenditure record'
+            'title'=>'Expenditure record'
         ];
 
         return view('expenses.expenditures')->with($data);

@@ -150,7 +150,16 @@
                                     <i class="fa fa-book text-success"></i>
                                     <span> EXPENSES </span>
                                 </a>                                 
-                            </li>                            
+                            </li>  
+                            
+                            <li>
+                                <a href="{{url('generate_reports')}}"  class="text-dark">
+                                    <i class="fa fa-book text-success"></i>
+                                    <span> REPORTS </span>
+                                </a>                                 
+                            </li>   
+                            
+                            
 
                         </ul>                 
                     </div>

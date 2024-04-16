@@ -201,16 +201,16 @@
                     @foreach($products as $product)
 
 
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
 
                             <div class="product-item">
 
                                 <div class="top">
-                                    <h5>{{$product->name}}</h5>
+                                    <h6 class="text-white">{{$product->name}}</h6>
                                 </div>
 
                                 <div class="img">
-                                    <img src="{{asset('product_files/'.$product->image($product->id))}}" alt="" class="img-fluid">
+                                    <img src="{{asset('product_files/'.$product->image($product->id))}}" alt="" style="width: 100%; height: 300px;" >
                                 </div>
 
                                 <div class="text text-white">
@@ -277,7 +277,7 @@
        
     </div>
     
-    <div class="modal fade custom-modal" id="formSuccessModal" tabindex="-1" role="dialog" aria-labelledby="formSuccessModalLabel" aria-hidden="true">
+    <div class="modal fade custom-modal" id="formSuccessModal" tabindex="-1" role="dialog" aria-labelledby="formSuccessModalLabel" aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header success">

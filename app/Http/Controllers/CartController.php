@@ -79,6 +79,14 @@ class CartController extends Controller
      */
     public function edit($user_id)
     {
+        
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $user_id)
+    {
         $carts = Cart::where('user_id',$user_id)->get();
 
         $saveHire = new Hire();
@@ -86,6 +94,8 @@ class CartController extends Controller
         $saveHire->user_id = Auth::id();
 
         $saveHire->date_placed = now();
+
+        $saveHire->delivery_method = $request->delivery_method;
 
         $saveHire->save();
 
@@ -102,14 +112,6 @@ class CartController extends Controller
         HireHelper::sendSMS(env("ADMIN_PHONE"),$message);
 
         return back()->with(['status'=>'Your Order has been placed']);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Cart $cart)
-    {
-        //
     }
 
     /**

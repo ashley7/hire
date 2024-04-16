@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->date('date_placed');
             $table->enum('status',['pending','confirmed','declined'])->default('pending');
+            $table->enum('delivery_method',['Pick-up','Deliver'])->default('Deliver');
 
         });
     }

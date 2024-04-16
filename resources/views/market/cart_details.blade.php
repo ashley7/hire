@@ -41,12 +41,31 @@
                         
                         </table>
 
-                        <hr>
+                       
 
-                        <a href="/" class="btn btn-success">Add More Items</a>
-                        @if($carts->count() > 0)
-                        <a href="{{ route('carts.edit',Auth::id()) }}" class="btn btn-success" style="float: right;">Submit Order</a>
-                        @endif
+                        <form action="{{ route('carts.update',Auth::id()) }}" method="post">
+                            @csrf
+                            @method('PATCH')
+
+                            @if($carts->count() > 0)
+                            
+                            <label for="delivery_mode">Deleivery mode</label>
+                            <select name="delivery_method" id="delivery_mode" class="form-control">
+                                <option value="Pick-up">I will pick it up</option>
+                                <option value="Deliver">Please Deliver to me</option>
+                            </select>
+
+                            @endif
+
+                            <hr>
+
+                            <a href="/" class="btn btn-success">Add More Items</a>
+                            @if($carts->count() > 0)
+                                <button type="submit" class="btn btn-success" style="float: right;">Submit Order</button>
+                            @endif
+                        </form>
+
+                        
                     </div>
                 </div>
             </div>

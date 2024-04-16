@@ -16,12 +16,13 @@
             <p>{{$hire->user->name}}</p>
             <p>Tel: {{ $hire->user->phone_number }}</p>
             <p>Date: {{ $hire->date_placed }}</p>
+            <p>Delivery method: {{ $hire->delivery_method }}</p>
         </div>
 
         <div class="col-md-4 col-sm-4 col-lg-4">
             <center>
                 <p>RECIEPT</p>
-                <p class="text-success">No. {{ $hire->id }}</p>
+                <p class="text-success">No. {{ $hire->id }}</p>                
             </center>
         </div>
 

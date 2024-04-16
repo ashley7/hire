@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hire;
 use App\Models\HirePayment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,16 @@ class HirePaymentController extends Controller
         $saveHirePayment->status = "successful";
 
         $saveHirePayment->save();
+
+        if(Hire::balance($saveHirePayment->hire_id) <= 0){
+
+            $hire = Hire::find($saveHirePayment->hire_id);
+
+            $hire->status = "confirmed";
+
+            $hire->save();
+
+        }
 
         return back();
 

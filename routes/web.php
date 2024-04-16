@@ -9,6 +9,7 @@ use App\Http\Controllers\HirePaymentController;
 use App\Http\Controllers\HireReturnController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -46,5 +47,9 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('load_cart/{product_id}',[MarketController::class,'load_cart']);
 
     Route::resource('carts',CartController::class);
+
+    Route::get('generate_reports',[ReportController::class,'generate_reports']);
+
+    Route::post('generate_reports',[ReportController::class,'generateReport']);    
 
 });

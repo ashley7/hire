@@ -12,13 +12,14 @@
     <div class="table-responsive">
         <table class="table" id="table_unsorted">
             <thead>
-                <th>Name</th> <th>Phone Number</th> <th>Action</th>
+               <th>Date</th>  <th>Name</th> <th>Phone Number</th> <th>Action</th>
             </thead>
 
             <tbody>
                 @foreach($users as $user)
 
                 <tr>
+                    <td>{{ $user->created_at }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->phone_number }}</td>
                     <td>

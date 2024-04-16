@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\DB;
 
 class Hire extends Model
 {
@@ -78,6 +79,12 @@ class Hire extends Model
         
     }
 
+
+    public static function balance($hire_id) {
+
+        return (Hire::bill($hire_id) - Hire::sumPaid($hire_id));
+        
+    }
 
 
 

@@ -22,6 +22,10 @@
 
     <body class="authentication-bg authentication-bg-pattern">
         <div class="row">
+
+            <div class="col-md-3 col-lg-3 col-sm-12">
+
+            </div>
            
 
             <div class="col-md-6 col-lg-6 col-sm-12">
@@ -31,56 +35,38 @@
                     <a href="/">
                         <span><img src="/assets/images/logo.png" alt="" width="50%"></span>
                     </a>
-                </div>
+                </div>                 
 
-                
-                 
-                    <div class="row">
-                        <div class="col-md-1 col-lg-1 col-sm-12">
-
-                        </div>
-
-                        <div class="col-md-10 col-lg-10 col-sm-12">
-
-                        @if (session('bad'))              
-                            <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                {{ session('bad') }}
-                            </div>
-                        @endif
-
-                        @if ($errors->any())
-                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>                            
-                        </div>     
-                        @endif
-
-
-                            <hr style="background-color: #CD9212; height:1px">                        
-                            @yield("content")
-                        </div>
-
-                        <div class="col-md-1 col-lg-1 col-sm-12">
-                            
-                        </div>
+                @if (session('bad'))              
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ session('bad') }}
                     </div>
+                @endif
+
+                @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>                            
+                </div>     
+                @endif
+
+                <hr style="background-color: #CD9212; height:1px">                        
+                @yield("content")
+                     
             </div>
 
-            <div class="col-md-6 col-lg-6 col-sm-12" style="background-color: #fff;">
-                <div class="text-center">
-                    <br> <br> <br>
-                    <img src="{{asset('assets/images/one.jpg')}}" alt="Home" width="80%" style="margin-bottom: 10%;" >
-                </div>
-            </div>
+            <div class="col-md-3 col-lg-3 col-sm-12">
+
+            </div>         
         </div>      
         
         <hr style="background-color: #CD9212; height:1px"> 
